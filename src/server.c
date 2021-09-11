@@ -15,7 +15,7 @@ int main(int argc, char **argv)
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) == SOCKET_ERROR)
         error_die("WSAStartup()");
 
-    // Fill in the address structure
+   
     local.sin_family        = AF_INET;
     local.sin_addr.s_addr   = INADDR_ANY;
     local.sin_port          = htons(DEFAULT_PORT);
