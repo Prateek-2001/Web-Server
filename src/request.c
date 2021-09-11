@@ -21,7 +21,7 @@ char *get_request_value(char *buf)
 {
     char retval[100] = {0};
 
-    sscanf(buf, "%s %s ", &retval, &retval);  // tee hee
+    sscanf(buf, "%s %s ", &retval, &retval);  
 
     if (retval[strlen(retval)-1] == '/')
         strcat(retval, "index.html");
@@ -36,7 +36,6 @@ REQUEST *GetRequest(SOCKET sock)
     char buf[REQUEST_SIZE];
 
     msg_len = recv(sock, buf, sizeof(buf), 0);
-    //printf("Bytes Received: %d, message: %s from %s\n", msg_len, buf, inet_ntoa(client.sin_addr));
 
     request         = malloc(sizeof(REQUEST));
     request->type   = get_request_type(buf);
